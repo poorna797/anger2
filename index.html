@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Reader</title>
+    <link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            max-width: 700px;
+            min-height: 700px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-sizing:border-box;
+           box-shadow: 0px 10px 20px 5px rgba(160, 248, 248, 0.7);
+            /* box-shadow: 0px 10px 20px 2px rgba(8, 7, 7, 0.1); */
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        button {
+            /* display: none; */
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            /* justify-content: flex-start; */
+            /* cursor: pointer; */
+            /* float: inline-end; */
+
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+        #text{
+            font-size: 20px;
+            line-height: 2.5;
+            min-height: 100%;
+            min-width: 100%;
+            border: 0px solid;
+            font-family: 'Mukta';
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- STORY TITLE -->
+        <h1>Crimson Fury</h1>
+    </header>
+    <main>
+       <nav> <h1>Chapter 1</h1></nav>
+        <div id="text"></div>
+        <!-- <footer><button id="next-button">Next Chapter</button></footer> -->
+    </main>
+
+    <script>
+       
+        
+        const textElement = document.getElementById("text");
+        const text = `
+
+        In the quaint village of Whispering Pines, where the gentle breeze carried secrets and the sun painted the sky in hues of warmth, there lived a woman named Emily. Her life, much like the peaceful surroundings, had been harmonious until the arrival of a relentless storm named "Crimson Fury."
+
+Emily, an artist with a penchant for capturing the serene beauty of her village on canvas, found herself facing unexpected challenges. The storm took the form of a bitter dispute with her closest friend, Clara, over a misunderstanding that festered like a wound in the heart of Whispering Pines.
+
+As the argument escalated, Emily's emotions transformed into a tempest of anger, casting a crimson hue over the once idyllic landscape of her relationships. Words were exchanged like lightning bolts, each leaving a mark on the tranquility of their bond. The village that had once echoed with laughter now resonated with the thunderous echoes of a friendship on the brink of collapse.
+
+Days turned into nights, and Emily's anger, like a relentless tempest, refused to subside. Sleepless nights were spent replaying the argument, the anger burning brighter with each passing thought. The villagers, once united in their camaraderie, now found themselves divided by the storm that raged within Emily.
+
+Realizing the destructive nature of her anger, Emily sought solace in the wisdom of an elderly woman, known in the village as the Keeper of Tranquility. The keeper, with eyes that held the stories of a lifetime, listened to Emily's tale of woe. She spoke of the transformative power of forgiveness and the importance of letting go of the crimson fury that threatened to consume her.
+
+With newfound determination, Emily took the keeper's words to heart. She reached out to Clara, extending an olive branch woven with sincerity and remorse. The village, yearning for the return of harmony, watched with bated breath as the two friends confronted the storm that had torn through their friendship.
+
+In the heart of Whispering Pines, Emily and Clara found a common ground, a patch of serene meadow where the storm's echoes could finally be silenced. With tearful apologies and shared laughter, they mended the frayed edges of their friendship, and the crimson hue that had stained their relationship faded into the gentle hues of forgiveness.
+
+The village, relieved by the return of peace, rejoiced in the resilience of a friendship that had weathered the tempest of anger. Emily's journey became a testament to the transformative power of forgiveness, and Whispering Pines, once again, echoed with the melodies of camaraderie, as the storm named "Crimson Fury" dissipated into a distant memory.
+
+
+
+`;
+        let index = 0;
+
+        function type() {
+          if (index < text.length) {
+            textElement.innerHTML += text.charAt(index);
+            index++;
+            setTimeout(type, 80);
+          }
+        }
+        type();
+        // if(type()){
+       
+        // }
+    </script>
+</body>
+</html>
